@@ -9,6 +9,7 @@
   },
   "author": "Resi Respati <resi@kata.ai>",
   "license": "MIT",
+  "files": ["build", "LICENSE", "README.md"],
   "scripts": {
     "build": "rimraf build && tsc",
     "prepublish": "npm run build",
