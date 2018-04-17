@@ -16,6 +16,7 @@ export default {
     'no-any': false,
     'no-arg': true,
     'no-bitwise': true,
+    'no-conditional-assignment': true,
     'no-console': [
       true,
       'log',
@@ -30,8 +31,10 @@ export default {
     'no-construct': true,
     'no-debugger': true,
     'no-duplicate-variable': true,
+    'no-dynamic-delete': true,
     'no-empty': true,
     'no-eval': true,
+    'no-parameter-reassignment': true,
     'no-shadowed-variable': true,
     'no-string-literal': false,
     'no-switch-case-fall-through': true,
