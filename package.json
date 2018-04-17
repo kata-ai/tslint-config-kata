@@ -1,0 +1,33 @@
+{
+  "name": "tslint-config-kata",
+  "version": "1.0.0",
+  "description": "TSLint config used at Kata.ai",
+  "main": "tslint.json",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kata-ai/tslint-config-kata.git"
+  },
+  "author": "Resi Respati <resi@kata.ai>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf build && tsc",
+    "prepublish": "npm run build",
+    "start": "tsc --watch"
+  },
+  "peerDependencies": {
+    "tslint": "^5.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^9.6.5",
+    "rimraf": "^2.6.2",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.1"
+  },
+  "dependencies": {
+    "tslint-config-prettier": "^1.10.0",
+    "tslint-consistent-codestyle": "^1.13.0",
+    "tslint-eslint-rules": "^5.1.0",
+    "tslint-microsoft-contrib": "^5.0.3",
+    "tslint-react": "^3.5.1"
+  }
+}
