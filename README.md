@@ -8,8 +8,6 @@ This is the common TSLint config used by projects at [Kata.ai](https://kata.ai).
 
 ## Installation
 
-**Note:** Since this module is not yet published on npm, you will have to install this package directly from github.
-
 Install `tslint` and `tslint-config-kata` using your favourite package manager:
 
 ```bash
