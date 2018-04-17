@@ -5,7 +5,6 @@ import getRuleDirectory from './utils/getRuleDirectory';
 
 module.exports = {
   rulesDirectory: [
-    './rules',
     getRuleDirectory('tslint-eslint-rules', 'dist/rules'),
     getRuleDirectory('tslint-consistent-codestyle'),
     getRuleDirectory('tslint-microsoft-contrib')
