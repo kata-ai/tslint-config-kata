@@ -8,7 +8,7 @@ export default {
     eofline: false,
     forin: true,
     indent: [true, 'spaces'],
-    'interface-name': [true, 'never-prefix'],
+    'interface-name': [true, 'always-prefix'],
     'jsdoc-format': true,
     'label-position': true,
     'max-line-length': [true, 120],
