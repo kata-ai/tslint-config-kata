@@ -41,6 +41,7 @@ export default {
     'no-trailing-whitespace': false,
     'no-unused-expression': true,
     'no-use-before-declare': false,
+    'no-var-keyword': true,
     'one-line': [
       true,
       'check-catch',
@@ -48,6 +49,7 @@ export default {
       'check-open-brace',
       'check-whitespace'
     ],
+    'prefer-const': true,
     quotemark: [true, 'single', 'jsx-double'],
     radix: true,
     semicolon: [true, 'always', 'ignore-bound-class-methods'],
