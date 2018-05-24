@@ -31,6 +31,44 @@ Then, on your `tslint.json` file, extend `tslint-config-kata`.
 
 Note that this package does not specifically follow Semantic Versioning, since all changes in this package are relative to the changes in our Development Standard. Major version bumps will occur when we transition into a new major version of TSLint.
 
+### Commit message guidelines
+
+We use [Commitizen](https://github.com/commitizen/cz-cli) with the [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog) standard. We included the Commitizen CLI inside the repository so that you can generate a formatted commit message simply by typing `yarn commit` (or `npm commit`).
+
+#### Format
+
+```
+<type>(<scope>): <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+```
+
+The first line must contain a commit type, an optional scope, and the subject of the commit.
+
+The message body contains a longer description of the change. This is reserved for any information that won't fit inside the subject line of a commit message. Note that each line of the commit message should not be longer than 72 characters.
+
+Footer is optional, and contains any additional information for the commit (e.g. issues fixed, breaking changes).
+
+#### Commit types
+
+We use the following conventional-changelog commit types:
+
+```
+feat:     A new feature
+fix:      A bug fix
+docs:     Documentation only changes
+style:    Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+refactor: A code change that neither fixes a bug nor adds a feature
+perf:     A code change that improves performance
+test:     Adding missing tests or correcting existing tests
+build:    Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+ci:       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+chore:    Other changes that don't modify src or test files
+revert:   Reverts a previous commit
+```
+
 ### Development guide
 
 Install dependencies using [Yarn](https://yarnpkg.com).
