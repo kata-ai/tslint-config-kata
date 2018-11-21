@@ -1,63 +1,36 @@
+// Base Config
+// Overrides default TSLint configs according to Kata Platform Development Standard.
+
 export default {
   rules: {
-    align: [true, 'statements'],
+    // extended rules for tslint-config-airbnb + kata exceptions
+    align: [true, 'statements'], // 7.15 exception
     ban: false,
-    'class-name': true,
-    'comment-format': [true, 'check-space'],
-    curly: true,
-    eofline: false,
+    eofline: false, // 19.5 exception
     forin: true,
-    indent: [true, 'spaces'],
+    'import-name': false, // 23.6 exception
     'interface-name': [true, 'always-prefix'],
     'jsdoc-format': true,
     'label-position': true,
-    'max-line-length': [true, 120],
+    'max-line-length': [true, 120], // 19.12 exception
     'member-ordering': [true, { order: 'fields-first' }],
     'no-any': false,
     'no-arg': true,
     'no-bitwise': true,
     'no-conditional-assignment': true,
-    'no-console': [
-      true,
-      'log',
-      'error',
-      'debug',
-      'info',
-      'time',
-      'timeEnd',
-      'trace'
-    ],
-    'no-consecutive-blank-lines': true,
-    'no-construct': true,
+    'no-console': [true, 'log', 'error', 'debug', 'info', 'time', 'timeEnd', 'trace'],
     'no-debugger': true,
     'no-duplicate-variable': true,
     'no-dynamic-delete': true,
     'no-empty': true,
-    'no-eval': true,
-    'no-parameter-reassignment': true,
     'no-shadowed-variable': true,
     'no-string-literal': false,
     'no-switch-case-fall-through': true,
-    'no-trailing-whitespace': false,
     'no-unused-expression': true,
     'no-use-before-declare': false,
-    'no-var-keyword': true,
-    'one-line': [
-      true,
-      'check-catch',
-      'check-else',
-      'check-open-brace',
-      'check-whitespace'
-    ],
-    'prefer-const': true,
-    quotemark: [true, 'single', 'jsx-double'],
-    radix: true,
-    semicolon: [true, 'always', 'ignore-bound-class-methods'],
+    'one-line': [true, 'check-catch', 'check-else', 'check-open-brace', 'check-whitespace'],
+    semicolon: [true, 'always', 'ignore-bound-class-methods'], // 21.1 addition
     'switch-default': true,
-
-    'trailing-comma': [false],
-
-    'triple-equals': [true, 'allow-null-check'],
     typedef: [true, 'parameter', 'property-declaration'],
     'typedef-whitespace': [
       true,
@@ -70,21 +43,12 @@ export default {
       }
     ],
     'variable-name': [
+      // 23.2 addition
       true,
       'ban-keywords',
       'check-format',
       'allow-leading-underscore',
       'allow-pascal-case'
-    ],
-    whitespace: [
-      true,
-      'check-branch',
-      'check-decl',
-      'check-module',
-      'check-operator',
-      'check-separator',
-      'check-type',
-      'check-typecast'
     ]
   }
 };

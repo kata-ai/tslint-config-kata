@@ -2,8 +2,6 @@
 
 > TSLint config used at Kata.ai
 
-## Introduction
-
 This is the common TSLint config used by projects at [Kata.ai](https://kata.ai). All TSLint rules follow the Kata Platform Development Standard.
 
 ## Installation
@@ -25,134 +23,59 @@ Then, on your `tslint.json` file, extend `tslint-config-kata`.
 }
 ```
 
-## Contributing
+If you're using this TSLint config for React-based projects, extend `tslint-config-kata/react` instead.
 
-### Versioning
+```json
+{
+  "extends": ["tslint-config-kata/react"]
+}
+```
+
+## Versioning
 
 Note that this package does not specifically follow Semantic Versioning, since all changes in this package are relative to the changes in our Development Standard. Major version bumps will occur when we transition into a new major version of TSLint.
 
-### Commit message guidelines
+To recap:
 
-We use [Commitizen](https://github.com/commitizen/cz-cli) with the [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog) standard. We included the Commitizen CLI inside the repository so that you can generate a formatted commit message simply by typing `yarn commit` (or `npm commit`).
+- `major`: Will be bumped when we transition to a new major version of TSLint
+- `minor`: Potentially breaking changes that's still within the same major version of TSLint
+- `patch`: Minor patches/bugfixes
 
-#### Format
+## Using Prettier
 
-```
-<type>(<scope>): <subject>
-<BLANK LINE>
-<body>
-<BLANK LINE>
-<footer>
-```
+[Prettier](https://prettier.io/) is a tool automatically formats your code during save. It supports various editors, from VSCode, Atom, Sublime, and even Emacs.
 
-The first line must contain a commit type, an optional scope, and the subject of the commit.
+To use this TSLint config in conjunction with Prettier, copy the `.prettierrc` file in this repository and paste it to your project.
 
-The message body contains a longer description of the change. This is reserved for any information that won't fit inside the subject line of a commit message. Note that each line of the commit message should not be longer than 72 characters.
+Then install the Prettier TSLint config and plugin:
 
-Footer is optional, and contains any additional information for the commit (e.g. issues fixed, breaking changes).
-
-#### Commit types
-
-We use the following conventional-changelog commit types:
-
-```
-feat:     A new feature
-fix:      A bug fix
-docs:     Documentation only changes
-style:    Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-refactor: A code change that neither fixes a bug nor adds a feature
-perf:     A code change that improves performance
-test:     Adding missing tests or correcting existing tests
-build:    Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-ci:       Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-chore:    Other changes that don't modify src or test files
-revert:   Reverts a previous commit
+```sh-session
+$ yarn add --dev tslint-plugin-prettier tslint-config-prettier
 ```
 
-### Development guide
+And finally, include them as follows. (**IMPORTANT:** `tslint-config-prettier` MUST be extended last in the `extends` array!)
 
-Install dependencies using [Yarn](https://yarnpkg.com).
-
-```bash
-yarn
-```
-
-To start incremental build, run:
-
-```bash
-yarn start
-```
-
-To build the package for publishing, run:
-
-```bash
-yarn publish
-```
-
-### Configuration files
-
-Just like ESLint, the TSLint config can either be written in JSON format, or plain JS format. In this case, we use the latter, but compiled from TypeScript.
-
-The main entry point for our config is the `src/base.ts` file.
-
-```ts
-// ./src/base.ts
-import react from './config/react';
-import base from './config/base';
-
-module.exports = {
-  rulesDirectory: [
-    // ...the custom rules we import
-  ],
-  extends: [
-    // ...the configs/rulesets we extend
-  ],
-  rules: {
-    ...base.rules,
-    ...react.rules
-    // ...add extra config sets below
+```json
+{
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "extends": ["tslint-config-kata", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  },
+  "rules": {
+    "prettier": true
   }
-};
+}
 ```
 
-This file is formatted the same as a regular `tslint.json` file, only in JavaScript. For an example on how to write rules in this format, see [this example config](https://github.com/kata-ai/tslint-config-kata/blob/master/src/config/base.ts).
+## Contributing
 
-Note that we separated the configurations into two files:
+Issues and Pull Requests welcome! Please read the [Contributing Guidelines](CONTRIBUTING.md) beforehand.
 
-* `./config/base` - Base config that overrides the default TSLint config.
-* `./config/react` - Overrides to React-specific rules provided by `tslint-react`.
+## License
 
-The config files are written in the following fornat:
+[MIT](LICENSE) (c) 2018 Kata.ai.
 
-```ts
-// ./src/config/base.ts
+# Maintainers
 
-export default {
-  rules: {
-    // insert tslint rules here
-  }
-};
-```
-
-**Further reading:** The [TSLint documentation](https://palantir.github.io/tslint/2016/03/31/sharable-configurations-rules.html) on shareable configurations.
-
-### Adding custom rules
-
-Please follow the [TSLint documentation](https://palantir.github.io/tslint/develop/custom-rules/) on adding custom rules. Make sure to follow these conventions:
-
-* Rule identifiers are always kebab-cased.
-* Rule files are always camel-cased (`camelCasedRule.ts`).
-* Rule files must contain the suffix `Rule`.
-* The exported class must always be named `Rule` and extend from `Lint.Rules.AbstractRule`.
-
-Custom rules must be added inside the `./src/rules` directory. To load it into TSLint, make sure to add said folder to the `rulesDirectory` config.
-
-```ts
-// ./src/base.ts
-module.exports = {
-  rulesDirectory: ['./rules', ...otherRules],
-  ...otherConfigs
-};
-```
-
-We have also imported additional rules from [tslint-react](https://github.com/palantir/tslint-react), [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib), and [tslint-consistent-codestyle](https://www.npmjs.com/package/tslint-consistent-codestyle).
+- Resi Respati ([@resir014](https://twitter.com/resir014)) – Kata.ai

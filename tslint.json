@@ -1,3 +1,10 @@
 {
-  "extends": "./build/base.js"
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "extends": ["./index.js", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules/**"]
+  },
+  "rules": {
+    "prettier": true
+  }
 }
