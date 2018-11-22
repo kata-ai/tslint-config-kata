@@ -31,6 +31,14 @@ export default {
     'one-line': [true, 'check-catch', 'check-else', 'check-open-brace', 'check-whitespace'],
     semicolon: [true, 'always', 'ignore-bound-class-methods'], // 21.1 addition
     'switch-default': true,
+    'trailing-comma': [
+      true,
+      {
+        multiline: 'never',
+        singleline: 'never',
+        esSpecCompliant: true
+      }
+    ], // 20.2 exception
     typedef: [true, 'parameter', 'property-declaration'],
     'typedef-whitespace': [
       true,
