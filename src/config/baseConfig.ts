@@ -31,6 +31,7 @@ export default {
     'one-line': [true, 'check-catch', 'check-else', 'check-open-brace', 'check-whitespace'],
     semicolon: [true, 'always', 'ignore-bound-class-methods'], // 21.1 addition
     'switch-default': true,
+    'ter-indent': [true, 4, { SwitchCase: 1 }], // 19.1 exception
     'trailing-comma': [
       true,
       {

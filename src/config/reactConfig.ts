@@ -20,6 +20,7 @@ export default {
 
     // Overrides from base config
     'interface-name': [true, 'never-prefix'],
-    'variable-name': [true, 'ban-keywords'] // 23.2 exception
+    'variable-name': [true, 'ban-keywords'], // 23.2 exception
+    'ter-indent': [true, 2, { SwitchCase: 1 }] // 19.1 exception
   }
 };
