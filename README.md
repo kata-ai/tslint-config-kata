@@ -43,7 +43,7 @@ To recap:
 
 ## Using Prettier
 
-[Prettier](https://prettier.io/) is a tool automatically formats your code during save. It supports various editors, from VSCode, Atom, Sublime, and even Emacs.
+[Prettier](https://prettier.io/) is a tool to automatically format your code during save. It supports various editors, from VSCode, Atom, Sublime, and even Emacs.
 
 To use this TSLint config in conjunction with Prettier, copy the `.prettierrc` file in this repository and paste it to your project.
 

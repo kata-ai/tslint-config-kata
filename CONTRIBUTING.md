@@ -47,7 +47,9 @@ To build the package for publishing, run:
 $ yarn publish
 ```
 
-## Configuration files
+## Project structure
+
+### Entry files
 
 Just like ESLint, the TSLint config can either be written in JSON format, or plain JS format. In this case, we use the latter, but compiled from TypeScript.
 
@@ -56,7 +58,7 @@ The main entry point for our config is the `.js` files located at the root. Note
 - `./index.js` - Base config that overrides the default TSLint config.
 - `./react.js` - Overrides to React-specific rules provided by `tslint-react`.
 
-The config files are written in the following format:
+The entry files are written in the following format:
 
 ```js
 // ./index.js
@@ -64,6 +66,8 @@ The config files are written in the following format:
 // Point to the built index file, and specifically choose the config to use.
 module.exports = require('./build/index').baseConfig;
 ```
+
+### Configuration files
 
 Next comes the configuration file. This file is formatted the same as a regular `tslint.json` file, only in JavaScript. For an example on how to write rules in this format, see [this example config](https://github.com/kata-ai/tslint-config-kata/blob/master/src/config/base.ts).
 
@@ -95,16 +99,16 @@ export const otherConfig = {
 
 **Further reading:** The [TSLint documentation](https://palantir.github.io/tslint/2016/03/31/sharable-configurations-rules.html) on shareable configurations.
 
-## Adding custom rules
+### Custom rules directory
 
-Please follow the [TSLint documentation](https://palantir.github.io/tslint/develop/custom-rules/) on adding custom rules. Make sure to follow these conventions:
+Any additional custom TSLint rules must be added inside the `./src/rules` directory. Please follow the [TSLint documentation](https://palantir.github.io/tslint/develop/custom-rules/) on adding custom rules. Make sure to follow these conventions:
 
 - Rule identifiers are always kebab-cased.
 - Rule files are always camel-cased (`camelCasedRule.ts`).
 - Rule files must contain the suffix `Rule`.
 - The exported class must always be named `Rule` and extend from `Lint.Rules.AbstractRule`.
 
-Custom rules must be added inside the `./src/rules` directory. To load it into TSLint, make sure to add said folder to the `rulesDirectory` config.
+To load these custom rules into TSLint, make sure to add said folder to the `rulesDirectory` config.
 
 ```ts
 // ./src/base.ts
@@ -113,5 +117,3 @@ module.exports = {
   ...otherConfigs
 };
 ```
-
-We have also imported additional rules from [tslint-react](https://github.com/palantir/tslint-react), [tslint-microsoft-contrib](https://github.com/Microsoft/tslint-microsoft-contrib), and [tslint-consistent-codestyle](https://www.npmjs.com/package/tslint-consistent-codestyle).
