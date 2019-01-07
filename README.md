@@ -50,7 +50,7 @@ To use this TSLint config in conjunction with Prettier, copy the `.prettierrc` f
 Then install the Prettier TSLint config and plugin:
 
 ```sh-session
-$ yarn add --dev tslint-plugin-prettier tslint-config-prettier
+$ yarn add --dev tslint-plugin-prettier tslint-config-prettier prettier
 ```
 
 And finally, include them as follows. (**IMPORTANT:** `tslint-config-prettier` MUST be extended last in the `extends` array!)
