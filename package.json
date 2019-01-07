@@ -1,6 +1,6 @@
 {
   "name": "tslint-config-kata",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "TSLint config used at Kata.ai",
   "main": "index.js",
   "repository": {
