@@ -31,6 +31,8 @@ If you're using this TSLint config for React-based projects, extend `tslint-conf
 }
 ```
 
+For more setups, take a look at the [templates directory](./templates)
+
 ## Versioning
 
 Note that this package does not specifically follow Semantic Versioning, since all changes in this package are relative to the changes in our Development Standard. Major version bumps will occur when we transition into a new major version of TSLint.
