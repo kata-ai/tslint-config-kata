@@ -19,6 +19,7 @@
   "scripts": {
     "build": "rimraf build && tsc",
     "commit": "git cz",
+    "format": "prettier --write '**/*.{ts,tsx}'",
     "lint": "tslint -p tsconfig.json",
     "prepublish": "yarn build",
     "start": "tsc --watch"

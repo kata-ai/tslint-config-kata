@@ -32,14 +32,6 @@ export default {
     semicolon: [true, 'always', 'ignore-bound-class-methods'], // 21.1 addition
     'switch-default': true,
     'ter-indent': [true, 4, { SwitchCase: 1 }], // 19.1 exception
-    'trailing-comma': [
-      true,
-      {
-        multiline: 'never',
-        singleline: 'never',
-        esSpecCompliant: true
-      }
-    ], // 20.2 exception
     typedef: [true, 'parameter', 'property-declaration'],
     'typedef-whitespace': [
       true,
@@ -48,8 +40,8 @@ export default {
         'index-signature': 'nospace',
         parameter: 'nospace',
         'property-declaration': 'nospace',
-        'variable-declaration': 'nospace'
-      }
+        'variable-declaration': 'nospace',
+      },
     ],
     'variable-name': [
       // 23.2 addition
@@ -57,7 +49,7 @@ export default {
       'ban-keywords',
       'check-format',
       'allow-leading-underscore',
-      'allow-pascal-case'
-    ]
-  }
+      'allow-pascal-case',
+    ],
+  },
 };
